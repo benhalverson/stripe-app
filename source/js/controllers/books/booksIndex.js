@@ -1,7 +1,7 @@
 'use strict';
 angular.module('bookApp')
   .controller('booksIndexCtrl', function($scope, $state, BookService){
-    BookService.index();
+    BookService.index()
     .then(function(res){
       $scope.books = res.data;
     }, function(err){

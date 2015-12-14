@@ -17,7 +17,7 @@ userSchema.methods.token = function() {
     username: this.username,
     _id: this._id
   };
-  var secret = process.env.JWT_SECRET;
+  var secret = process.env.JWT_SECRET || 'secretpassword';
   var token = jwt.encode(payload, secret);
   return token;
 };
