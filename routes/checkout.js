@@ -8,9 +8,9 @@ var stripe = require("stripe")("sk_test_5PEJEgn4aQavdoBAwiugPHsz");
 router.post('/', function(req, res) {
   var tokenObj = req.body.tokenObj;
   var book = req.body.book;
-
+console.log('body contents: ', req.body);
   var charge = stripe.charges.create({
-    amount: 14.00 * 100,
+    amount: Math.round(book.price * 100),
     currency: "usd",
     source: tokenObj.id,
     description: `${book.title} by ${book.author}`

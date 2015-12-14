@@ -4,7 +4,8 @@ angular.module('bookApp')
     BookService.index()
     .then(function(res){
       $scope.books = res.data;
+      console.log('data ', res.data);
     }, function(err){
-      console.error(err);
+      console.error(err.data);
     });
   });

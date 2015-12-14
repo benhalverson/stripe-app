@@ -43,6 +43,28 @@ angular.module('bookApp', ['ui.router', 'ngStorage', 'stripe.checkout'])
 
 'use strict';
 angular.module('bookApp')
+  .service('BookService', function($http, ENV) {
+    this.index = function() {
+      return $http.get(`${ENV.API_URL}/books/`);
+    };
+    this.show = function(bookId) {
+      return $http.get(`${ENV.API_URL}/books/${bookId}`);
+    };
+  });
+
+'use strict';
+angular.module('bookApp')
+  .service('UserService', function($http, ENV){
+    this.register= function(user) {
+      return $http.post(`${ENV.API_URL}/users/register`, user);
+    };
+    this.login = function(user) {
+      return $http.post(`${ENV.API_URL}/users/login`, user);
+    };
+  });
+
+'use strict';
+angular.module('bookApp')
   .controller('loginCtrl', function($scope, $state, $localStorage, UserService){
     $scope.submit = function(user) {
       UserService.login(user)
@@ -84,34 +106,13 @@ angular.module('bookApp')
 
 'use strict';
 angular.module('bookApp')
-  .service('BookService', function($http, ENV) {
-    this.index = function() {
-      return $http.get(`${ENV.API_URL}/books/`);
-    };
-    this.show = function(bookId) {
-      return $http.get(`${ENV.API_URL}/books/${bookId}`);
-    };
-  });
-
-'use strict';
-angular.module('bookApp')
-  .service('UserService', function($http, ENV){
-    this.register= function(user) {
-      return $http.post(`${ENV.API_URL}/users/register`, user);
-    };
-    this.login = function(user) {
-      return $http.post(`${ENV.API_URL}/users/login`, user);
-    };
-  });
-
-'use strict';
-angular.module('bookApp')
   .controller('booksIndexCtrl', function($scope, $state, BookService){
     BookService.index()
     .then(function(res){
       $scope.books = res.data;
+      console.log('data ', res.data);
     }, function(err){
-      console.error(err);
+      console.error(err.data);
     });
   });
 
