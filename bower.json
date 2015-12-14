@@ -1,0 +1,18 @@
+{
+  "name": "stripeapp",
+  "description": "A simple stripe app",
+  "main": "app.js",
+  "authors": [
+    "Ben Halverson <benhalverson33@gmail.com> (http://benhalverson.me/)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/benhalverson/stripe-app",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

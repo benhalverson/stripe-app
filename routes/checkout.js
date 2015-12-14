@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-var stripe = reqire('stripe')('API_TestKeyHere');
+var stripe = require('stripe')('API_TestKeyHere');
 
 router.post('/', function(req, res){
   var tokenObj = req.body.tokenOBj;

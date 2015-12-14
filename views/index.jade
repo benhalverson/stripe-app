@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    link(href='bootstraplink', rel='stylesheet')
+    link(href='sweetalertlink', rel='stylesheet')
+  body(ng-app='bookApp')
+    nav.navbar.navbar-default(ng-controller='navctrl')
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#nav-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(ui-sref='home')= title
+        #nav-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(ui-sref='books.index')#bookslink Books
+            li
+              a(ui-sref='register')#registerlink Register              
+            li
+              a(ui-sref='login')#loginlink Login            
+            li
+              a#logout(ng-click='logout()') logout
+      .container
+        ui-view
+      
+      script(src='jquery')
+      script(src='angular')
+      script(src='angular-ui-router')
+      script(src='ngstorage')
+      script(src='angular stripe checkout')
+      script(src='bootstrap')
+      script(src='sweet alert')
+      script(src='bundle.js')
+              
