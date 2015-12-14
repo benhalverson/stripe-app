@@ -82,6 +82,16 @@ angular.module('bookApp')
     }
   });
 
+'use strict';
+angular.module('bookApp')
+  .service('BookService', function($http, ENV) {
+    this.index = function() {
+      return $http.get(`${ENV.API_URL}/books/`);
+    };
+    this.show = function() {
+      return $http.get(`${ENV.API_URL}/books/${bookId}`);
+    };
+  });
 
 'use strict';
 angular.module('bookApp')
@@ -91,5 +101,41 @@ angular.module('bookApp')
     };
     this.login = function(user) {
       return $http.post(`${ENV.API_URL}/users/login`, user);
+    };
+  });
+
+'use strict';
+angular.module('bookApp')
+  .controller('booksIndexCtrl', function($scope, $state, BookService){
+    BookService.index();
+    .then(function(res){
+      $scope.books = res.data;
+    }, function(err){
+      console.error(err);
+    });
+  });
+
+'use strict';
+
+angular.module('bookApp')
+  .controller('bookShowCtrl', function($scope, $state, $http, ENV, BookService){
+    BookService.show($state.params.bookId)
+    .then(function(res){
+      $scope.book = res.data;
+    });
+
+    $scope.doCheckout = function(tokenObj) {
+      $http.post(`${ENV.API_URL}/checkout`, {
+        tokenObj: tokenObj,
+        book: $scope.book
+      })
+      .then(function(res) {
+        console.log('res: ', res);
+      }, function(err) {
+        console.log('error ', err);
+      });
+    };
+    $scope.formatPrice = function(num) {
+      return Math.round(num * 100);
     };
   });
