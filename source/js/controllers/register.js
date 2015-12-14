@@ -13,5 +13,5 @@ angular.module('bookApp')
       }, function(err){
         console.error(err);
       });
-    }
+    };
   });

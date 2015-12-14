@@ -19,7 +19,7 @@ router.get('/:id', function(req, res){
 
 router.post('/', function(req, res){
   Book.create(req.body, function(err, book){
-    res.status(err ? 400 : 200).send(err || books);
+    res.status(err ? 400 : 200).send(err || book);
   });
 });
 

@@ -79,7 +79,7 @@ angular.module('bookApp')
       }, function(err){
         console.error(err);
       });
-    }
+    };
   });
 
 'use strict';
@@ -88,7 +88,7 @@ angular.module('bookApp')
     this.index = function() {
       return $http.get(`${ENV.API_URL}/books/`);
     };
-    this.show = function() {
+    this.show = function(bookId) {
       return $http.get(`${ENV.API_URL}/books/${bookId}`);
     };
   });
@@ -118,10 +118,11 @@ angular.module('bookApp')
 'use strict';
 
 angular.module('bookApp')
-  .controller('bookShowCtrl', function($scope, $state, $http, ENV, BookService){
-    BookService.show($state.params.bookId)
+  .controller('booksShowCtrl', function($scope, $state, $http, ENV, BookService){
+    BookService.show($state.params.booksId)
     .then(function(res){
       $scope.book = res.data;
+      console.log('data', res.data);
     });
 
     $scope.doCheckout = function(tokenObj) {

@@ -4,7 +4,7 @@ angular.module('bookApp')
     this.index = function() {
       return $http.get(`${ENV.API_URL}/books/`);
     };
-    this.show = function() {
+    this.show = function(bookId) {
       return $http.get(`${ENV.API_URL}/books/${bookId}`);
     };
   });

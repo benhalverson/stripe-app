@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('bookApp')
-  .controller('bookShowCtrl', function($scope, $state, $http, ENV, BookService){
-    BookService.show($state.params.bookId)
+  .controller('booksShowCtrl', function($scope, $state, $http, ENV, BookService){
+    BookService.show($state.params.booksId)
     .then(function(res){
       $scope.book = res.data;
+      console.log('data', res.data);
     });
 
     $scope.doCheckout = function(tokenObj) {
