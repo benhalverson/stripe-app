@@ -8,7 +8,7 @@ angular.module('bookApp')
       }
       UserService.register(user)
       .then(function(data){
-        $scope.$storage.myToken = res.data.token;
+        $scope.$storage.myToken = data.token;
         $state.go('home');
       }, function(err){
         console.error(err);

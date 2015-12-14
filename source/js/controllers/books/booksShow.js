@@ -14,9 +14,10 @@ angular.module('bookApp')
         book: $scope.book
       })
       .then(function(res) {
-        console.log('res: ', res);
+        console.log('res: ', res.data);
       }, function(err) {
         console.log('error ', err);
+        console.log(err.data.message);
       });
     };
     $scope.formatPrice = function(num) {

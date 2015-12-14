@@ -35,11 +35,11 @@ angular.module('bookApp', ['ui.router', 'ngStorage', 'stripe.checkout'])
            controller: 'booksIndexCtrl'
           })
           .state('books.show',
-          { url: '/{bookId}',
+          { url: '/{booksId}',
            templateUrl: 'templates/books/booksShow.html',
            controller: 'booksShowCtrl'
-          })
-      })
+         });
+      });
 
 'use strict';
 angular.module('bookApp')
@@ -74,7 +74,7 @@ angular.module('bookApp')
       }
       UserService.register(user)
       .then(function(data){
-        $scope.$storage.myToken = res.data.token;
+        $scope.$storage.myToken = data.token;
         $state.go('home');
       }, function(err){
         console.error(err);
@@ -131,9 +131,10 @@ angular.module('bookApp')
         book: $scope.book
       })
       .then(function(res) {
-        console.log('res: ', res);
+        console.log('res: ', res.data);
       }, function(err) {
         console.log('error ', err);
+        console.log(err.data.message);
       });
     };
     $scope.formatPrice = function(num) {
