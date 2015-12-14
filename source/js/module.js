@@ -3,8 +3,8 @@ angular.module('bookApp', ['ui.router', 'ngStorage', 'stripe.checkout'])
       .constant('ENV', {
         API_URL: 'http://localhost:3000'
       })
-      .run(function($rootScope, $localstorage) {
-        $rootScope.$storage = $localstorage;
+      .run(function($rootScope, $localStorage) {
+        $rootScope.$storage = $localStorage;
       })
       .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -19,7 +19,7 @@ angular.module('bookApp', ['ui.router', 'ngStorage', 'stripe.checkout'])
            templateUrl: 'templates/login.html',
            controller: 'loginCtrl'
           })
-          .state('home',
+          .state('register',
           { url: '/register',
            templateUrl: 'templates/register.html',
            controller: 'registerCtrl'
@@ -31,7 +31,7 @@ angular.module('bookApp', ['ui.router', 'ngStorage', 'stripe.checkout'])
           })
           .state('books.index',
           { url: '/',
-           templateUrl: 'templates/books/booksIndex.html'
+           templateUrl: 'templates/books/booksIndex.html',
            controller: 'booksIndexCtrl'
           })
           .state('books.show',

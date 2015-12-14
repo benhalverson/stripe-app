@@ -2,10 +2,10 @@ doctype html
 html(lang='en')
   head
     title= title
-    link(href='bootstraplink', rel='stylesheet')
-    link(href='sweetalertlink', rel='stylesheet')
+    link(href='/vendor/bootstrap/dist/css/bootstrap.css', rel='stylesheet')
+    link(href='/vendor/sweetalert/dist/sweetalert.css', rel='stylesheet')
   body(ng-app='bookApp')
-    nav.navbar.navbar-default(ng-controller='navctrl')
+    nav.navbar.navbar-default(ng-controller='navCtrl')
       .container-fluid
         .navbar-header
           button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#nav-collapse')
@@ -33,6 +33,6 @@ html(lang='en')
       script(src='/vendor/ngstorage/ngStorage.js')
       script(src='/vendor/angular-stripe-checkout/angular-stripe-checkout.js')
       script(src='/vendor/bootstrap/dist/js/bootstrap.js')
-      script(src='/vendor/sweetalert/dist/sweetalert.js')
+      //- script(src='/vendor/sweetalert/dist/sweetalert.js')
       script(src='bundle.js')
               
