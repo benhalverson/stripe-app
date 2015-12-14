@@ -35,7 +35,7 @@ angular.module('bookApp', ['ui.router', 'ngStorage', 'stripe.checkout'])
            controller: 'booksIndexCtrl'
           })
           .state('books.show',
-          { url: '/{booksId}',
+          { url: '/{bookId}',
            templateUrl: 'templates/books/booksShow.html',
            controller: 'booksShowCtrl'
          });

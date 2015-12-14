@@ -2,7 +2,7 @@
 
 angular.module('bookApp')
   .controller('booksShowCtrl', function($scope, $state, $http, ENV, BookService){
-    BookService.show($state.params.booksId)
+    BookService.show($state.params.bookId)
     .then(function(res){
       $scope.book = res.data;
       console.log('data', res.data);

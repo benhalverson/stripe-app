@@ -35,33 +35,11 @@ angular.module('bookApp', ['ui.router', 'ngStorage', 'stripe.checkout'])
            controller: 'booksIndexCtrl'
           })
           .state('books.show',
-          { url: '/{booksId}',
+          { url: '/{bookId}',
            templateUrl: 'templates/books/booksShow.html',
            controller: 'booksShowCtrl'
          });
       });
-
-'use strict';
-angular.module('bookApp')
-  .service('BookService', function($http, ENV) {
-    this.index = function() {
-      return $http.get(`${ENV.API_URL}/books/`);
-    };
-    this.show = function(bookId) {
-      return $http.get(`${ENV.API_URL}/books/${bookId}`);
-    };
-  });
-
-'use strict';
-angular.module('bookApp')
-  .service('UserService', function($http, ENV){
-    this.register= function(user) {
-      return $http.post(`${ENV.API_URL}/users/register`, user);
-    };
-    this.login = function(user) {
-      return $http.post(`${ENV.API_URL}/users/login`, user);
-    };
-  });
 
 'use strict';
 angular.module('bookApp')
@@ -106,6 +84,28 @@ angular.module('bookApp')
 
 'use strict';
 angular.module('bookApp')
+  .service('BookService', function($http, ENV) {
+    this.index = function() {
+      return $http.get(`${ENV.API_URL}/books/`);
+    };
+    this.show = function(bookId) {
+      return $http.get(`${ENV.API_URL}/books/${bookId}`);
+    };
+  });
+
+'use strict';
+angular.module('bookApp')
+  .service('UserService', function($http, ENV){
+    this.register= function(user) {
+      return $http.post(`${ENV.API_URL}/users/register`, user);
+    };
+    this.login = function(user) {
+      return $http.post(`${ENV.API_URL}/users/login`, user);
+    };
+  });
+
+'use strict';
+angular.module('bookApp')
   .controller('booksIndexCtrl', function($scope, $state, BookService){
     BookService.index()
     .then(function(res){
@@ -120,7 +120,7 @@ angular.module('bookApp')
 
 angular.module('bookApp')
   .controller('booksShowCtrl', function($scope, $state, $http, ENV, BookService){
-    BookService.show($state.params.booksId)
+    BookService.show($state.params.bookId)
     .then(function(res){
       $scope.book = res.data;
       console.log('data', res.data);
