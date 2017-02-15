@@ -11,26 +11,26 @@
   "author": "Ben Halverson <benhalverson33@gmail.com> (http://benhalverson.me/)",
   "license": "MIT",
   "dependencies": {
-    "async": "1.5.0",
-    "bcryptjs": "2.3.0",
-    "body-parser": "1.14.1",
-    "bower": "1.7.1",
-    "cookie-parser": "1.4.0",
-    "ejs": "2.3.4",
-    "express": "4.13.3",
+    "async": "2.1.4",
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.16.1",
+    "bower": "1.8.0",
+    "cookie-parser": "1.4.3",
+    "ejs": "2.5.5",
+    "express": "4.14.1",
     "jade": "1.11.0",
-    "jwt-simple": "0.4.0",
-    "mongoose": "4.3.1",
-    "morgan": "1.6.1",
-    "stripe": "4.1.0"
+    "jwt-simple": "0.5.1",
+    "mongoose": "4.8.2",
+    "morgan": "1.8.1",
+    "stripe": "4.15.0"
   },
   "devDependencies": {
-    "gulp": "3.9.0",
+    "gulp": "3.9.1",
     "gulp-add-src": "0.2.0",
-    "gulp-concat": "2.6.0",
-    "gulp-copy": "0.0.2",
-    "gulp-run": "1.6.12",
-    "gulp-util": "3.0.7",
-    "rimraf": "2.4.4"
+    "gulp-concat": "2.6.1",
+    "gulp-copy": "1.0.0",
+    "gulp-run": "1.7.1",
+    "gulp-util": "3.0.8",
+    "rimraf": "2.5.4"
   }
 }
