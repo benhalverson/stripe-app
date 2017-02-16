@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bower i",
-    "setup": "rm -rf node_modules public/vendor && npm i && bower i"
+    "setup": "rm -rf node_modules public/vendor && npm i"
   },
   "author": "Ben Halverson <benhalverson33@gmail.com> (http://benhalverson.me/)",
   "license": "MIT",
@@ -14,7 +13,6 @@
     "async": "1.5.0",
     "bcryptjs": "2.3.0",
     "body-parser": "1.14.1",
-    "bower": "1.7.1",
     "cookie-parser": "1.4.0",
     "ejs": "2.3.4",
     "express": "4.13.3",
@@ -22,7 +20,16 @@
     "jwt-simple": "0.4.0",
     "mongoose": "4.3.1",
     "morgan": "1.6.1",
-    "stripe": "4.1.0"
+    "stripe": "4.1.0",
+    "angular": "1.5",
+    "bootstrap": "*",
+    "sweetalert": "*",
+    "font-awesome": "*",
+    "ngstorage": "*",
+    "angular-ui-router": "*",
+    "angular-stripe": "*",
+    "angular-stripe-checkout": "*"
+
   },
   "devDependencies": {
     "gulp": "3.9.0",
