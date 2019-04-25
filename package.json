@@ -36,7 +36,7 @@
     "gulp-add-src": "0.2.0",
     "gulp-concat": "2.6.1",
     "gulp-copy": "4.0.1",
-    "gulp-run": "1.6.12",
+    "gulp-run": "1.7.1",
     "gulp-util": "3.0.8",
     "rimraf": "2.4.4"
   }
