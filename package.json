@@ -37,7 +37,7 @@
     "gulp-concat": "2.6.0",
     "gulp-copy": "0.0.2",
     "gulp-run": "1.6.12",
-    "gulp-util": "3.0.7",
+    "gulp-util": "3.0.8",
     "rimraf": "2.4.4"
   }
 }
