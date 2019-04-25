@@ -38,6 +38,6 @@
     "gulp-copy": "4.0.1",
     "gulp-run": "1.7.1",
     "gulp-util": "3.0.8",
-    "rimraf": "2.4.4"
+    "rimraf": "2.6.3"
   }
 }
