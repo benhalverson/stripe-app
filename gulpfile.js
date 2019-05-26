@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp = require('gulp');
-var copy = require('gulp-copy');
-var rimraf = require('rimraf');
-var run = require('gulp-run');
-var gutil = require('gulp-util');
-var concat = require('gulp-concat');
-var addsrc = require('gulp-add-src');
-var async = require('async');
+const gulp = require('gulp');
+const copy = require('gulp-copy');
+const rimraf = require('rimraf');
+const run = require('gulp-run');
+const gutil = require('gulp-util');
+const concat = require('gulp-concat');
+const addsrc = require('gulp-add-src');
+const async = require('async');
 
-var paths = {
+const paths = {
   filesrc: 'source/**/*',
   filepath: 'public',
   cleanedfiles: [
