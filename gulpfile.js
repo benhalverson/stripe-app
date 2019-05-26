@@ -37,9 +37,9 @@ gulp.task('clean', function(cb){
   async.each(paths.cleanedfiles, rimraf, cb);
 });
 
-gulp.task('bower', function(cb){
-  run('bower i').exec(cb)
-  .on('error', gutil.log);
-});
+// gulp.task('bower', function(cb){
+//   run('bower i').exec(cb)
+//   .on('error', gutil.log);
+// });
 
-gulp.task('default', ['build', 'bower', 'watch']);
+gulp.task('default', ['build', 'watch']);
