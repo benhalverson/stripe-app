@@ -1,7 +1,5 @@
-'use strict';
-
 var PORT = process.env.PORT || 3000;
-var MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:/payments';
+var MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/payments';
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -16,7 +14,7 @@ mongoose.connect(`${MONGO_URL}`, function(err){
 
 var app = express();
 
-app.set('view engine', 'jade');
+app.set('view engine', 'pug')
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());

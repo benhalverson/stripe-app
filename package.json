@@ -16,7 +16,7 @@
     "cookie-parser": "1.4.4",
     "ejs": "2.6.1",
     "express": "4.16.4",
-    "jade": "1.11.0",
+    "pug": "^2.0.3",
     "jwt-simple": "0.5.6",
     "mongoose": "5.5.8",
     "morgan": "1.9.1",
@@ -26,10 +26,9 @@
     "sweetalert": "*",
     "font-awesome": "*",
     "ngstorage": "*",
-    "angular-ui-router": "*",
-    "angular-stripe": "*",
-    "angular-stripe-checkout": "*"
-
+    "angular-ui-router": "1.0.22",
+    "angular-stripe": "5.0.0",
+    "angular-stripe-checkout": "5.1"
   },
   "devDependencies": {
     "gulp": "4.0.2",
