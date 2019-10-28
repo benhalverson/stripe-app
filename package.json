@@ -26,7 +26,7 @@
     "sweetalert": "*",
     "font-awesome": "*",
     "ngstorage": "*",
-    "angular-ui-router": "1.0.22",
+    "angular-ui-router": "1.0.23",
     "angular-stripe": "5.0.0",
     "angular-stripe-checkout": "5.1"
   },
